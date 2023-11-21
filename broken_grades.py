@@ -1,6 +1,7 @@
 # Calculating Grades (ok, let me think about this one)
 
-# Write a program that will average 3 numeric exam grades, return an average test score, a corresponding letter grade, and a message stating whether the student is passing.
+""" Write a program that will average 3 numeric exam grades, return an average test score
+a corresponding letter grade, and a message stating whether the student is passing """
 
 # Average	Grade
 # 90+	A
@@ -21,36 +22,35 @@
 
 exam_one = int(input("Input exam grade one: "))
 
-exam_two = input("Input exam grade two: "))
+exam_two = int(input("Input exam grade two: "))  # i deleted a ) then added in and added ()
 
-exam_3 = str(input("Input exam grade three: "))
+exam_three = int(input("Input exam grade three: "))  # fixed exam3 to exam_three
 
-grades = [exam_one exam_two exam_three]
-sum = 0
-for grade in grade:
-  sum = sum + grade
+grades = [exam_one, exam_two, exam_three]  # added commas for the list
+sum1 = 0  # changed sum to sum1
+for grade in grades:  # fixed grade to grades
+    sum1 = sum1 + grade
 
-avg = sum / len(grdes)
+avg = round(sum1 / len(grades))  # changed grdes to grades and added round to it can round up the values
 
 if avg >= 90:
     letter_grade = "A"
-elif avg >= 80 and avg < 90
+elif 80 <= avg < 90:  # i added : and made avg range between 80 and 90
     letter_grade = "B"
-elif avg > 69 and avg < 80:
-    letter_grade = "C'
-elif avg <= 69 and avg >= 65:
+elif 69 < avg < 80:  # made avg range between 69 and 80
+    letter_grade = "C"  # added "
+elif 69 >= avg >= 65:
     letter_grade = "D"
-elif:
+else:  # changed elif to else
     letter_grade = "F"
 
 for grade in grades:
     print("Exam: " + str(grade))
 
-    print("Average: " + str(avg))
+print("Average: " + str(avg))  # added a backspace
+print("Grade: " + letter_grade)
 
-    print("Grade: " + letter_grade)
-
-if letter-grade is "F":
-    print "Student is failing."
+if letter_grade == "F":  # removed - and replaced it with "_"
+    print("Student is failing.")  # added ()
 else:
-    print "Student is passing."
+    print("Student is passing.")  # added ()
