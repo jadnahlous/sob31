@@ -45,7 +45,7 @@ def check_winner(game):
         if winner != 0:
             return winner
 
-    return winner
+    # took out the other return winner
 
 def start_game():
     return [[0, 0, 0] for x in range(3)]
@@ -67,7 +67,7 @@ def add_piece(game, player, row, column):
     row: 0-index row
     column: 0-index column
     """
-    game[row][column+1] = player
+    game[row][column] = player  # i took out the +1 because it keeps incremenring the position of x in column
     return game
 
 def check_space_empty(game, row, column):
@@ -77,7 +77,7 @@ def convert_input_to_coordinate(user_input):
     return user_input - 1
 
 def switch_player(player):
-    if player = 1:
+    if player == 1:  # added an additional = sign
         return 2
     else:
         return 1
@@ -98,12 +98,13 @@ if __name__ == '__main__':
     while winner == 0 and moves_exist(game):
         print("Currently player: " + str(player))
         available = False
-        while not available
+        while not available:  # added a :
             row = convert_input_to_coordinate(int(input("Which row? (start with 1) ")))
             column = convert_input_to_coordinate(int(input("Which column? (start with 1) ")))
-            available = check_space_empty(game, row)
-        game = add_piece(game, player, row, column)
-        display_game(game)
-        player = switch_player(player)
-#        winner = check_winner(game)
+            available = check_space_empty(game, row, column)  # added the column
+            game = add_piece(game, player, row, column)
+            display_game(game)
+            player = switch_player(player)  # fixed
+
+        winner = check_winner(game)  # the winner was a comment and its in the loop  of while
     display_winner(winner)
