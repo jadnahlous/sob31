@@ -44,8 +44,9 @@ def check_winner(game):
         winner = check_row_winner(game_slice)
         if winner != 0:
             return winner
+    return winner
 
-    # took out the other return winner
+
 
 def start_game():
     return [[0, 0, 0] for x in range(3)]
